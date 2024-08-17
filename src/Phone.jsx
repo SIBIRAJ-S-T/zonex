@@ -15,7 +15,7 @@ const Phone = () => {
 
     try {
       // Make a POST request to the backend
-      const response = await axios.post('http://localhost:8080/api/phone', {
+      const response = await axios.post('https://zonex-50021869695.development.catalystappsail.in/api/phone', {
         phoneNumber,
         username // Include the username in the request
       });

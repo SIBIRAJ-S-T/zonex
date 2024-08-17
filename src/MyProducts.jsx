@@ -15,7 +15,7 @@ const MyProducts = () => {
 
     const fetchMyProducts = async () => {
         try {
-            const response = await fetch('http://localhost:8080/api/yourapp');
+            const response = await fetch('https://zonex-50021869695.development.catalystappsail.in/api/yourapp');
             const data = await response.json();
             const filteredProducts = data.filter(product => product.username === username);
             setMyProducts(filteredProducts);
@@ -30,7 +30,7 @@ const MyProducts = () => {
 
     const fetchImage = async (product) => {
         try {
-            const response = await fetch(`http://localhost:8080/yourapp/${product.id}/appicon`); // Adjust the endpoint as needed
+            const response = await fetch(`https://zonex-50021869695.development.catalystappsail.in/yourapp/${product.id}/appicon`); // Adjust the endpoint as needed
             const imageBlob = await response.blob();
             const imageObjectURL = URL.createObjectURL(imageBlob);
 
@@ -46,7 +46,7 @@ const MyProducts = () => {
 
     const handleDelete = async (id) => {
         try {
-            const response = await fetch(`http://localhost:8080/deletemyproduct/${id}`, {
+            const response = await fetch(`https://zonex-50021869695.development.catalystappsail.in/deletemyproduct/${id}`, {
                 method: 'DELETE',
             });
             if (response.ok) {

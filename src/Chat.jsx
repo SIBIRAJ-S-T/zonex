@@ -59,7 +59,7 @@ const Chat = () => {
 
     const fetchMessages = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/getmessages');
+            const response = await axios.get('https://zonex-50021869695.development.catalystappsail.in/getmessages');
             setMessages(response.data);
 
             const colors = {};
@@ -77,7 +77,7 @@ const Chat = () => {
     const sendMessage = async () => {
         if (message.trim() === '') return;
         try {
-            const response = await axios.post('http://localhost:8080/postmessages', { username, message });
+            const response = await axios.post('https://zonex-50021869695.development.catalystappsail.in/postmessages', { username, message });
             setMessages((prevMessages) => {
                 const updatedMessages = [...prevMessages, response.data];
                 setNewMessage(response.data); // Set the new message state

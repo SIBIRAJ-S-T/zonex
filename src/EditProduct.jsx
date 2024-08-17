@@ -47,7 +47,7 @@ const EditProduct = () => {
         }
 
         try {
-            const response = await fetch(`http://localhost:8080/updatemyproduct/${product.id}`, {
+            const response = await fetch(`https://zonex-50021869695.development.catalystappsail.in/updatemyproduct/${product.id}`, {
                 method: 'PUT',
                 body: formDataToSend,
             });

@@ -20,7 +20,7 @@ const UpdatePassword = () => {
             return;
         }
         try {
-            const res = await axios.put(`http://localhost:8080/updatePassword/${username}/${oldPassword}/${newPassword}`);
+            const res = await axios.put(`https://zonex-50021869695.development.catalystappsail.in/updatePassword/${username}/${oldPassword}/${newPassword}`);
             setMessage(res.data);
             if (res.data.includes("successfully")) {
                 setTimeout(() => {

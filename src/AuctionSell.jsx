@@ -38,7 +38,7 @@ const AuctionSell = () => {
     }
 
     try {
-      await axios.post('http://localhost:8080/api/auctions', data, {
+      await axios.post('https://zonex-50021869695.development.catalystappsail.in/api/auctions', data, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }

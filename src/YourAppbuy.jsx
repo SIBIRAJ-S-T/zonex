@@ -15,7 +15,7 @@ const YourAppBuy = () => {
 
     const fetchYourApps = async () => {
         try {
-            const response = await fetch('http://localhost:8080/api/yourapp');
+            const response = await fetch('https://zonex-50021869695.development.catalystappsail.in/api/yourapp');
             const data = await response.json();
             setYourApps(data);
 
@@ -33,7 +33,7 @@ const YourAppBuy = () => {
 
     const fetchAppIcon = async (id) => {
         try {
-            const response = await axios.get(`http://localhost:8080/yourapp/${id}/appicon`, {
+            const response = await axios.get(`https://zonex-50021869695.development.catalystappsail.in/yourapp/${id}/appicon`, {
                 responseType: 'arraybuffer'
             });
             const base64Image = btoa(

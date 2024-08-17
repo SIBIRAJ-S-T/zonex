@@ -35,7 +35,7 @@ const YourApp = () => {
         formData.append('appicon', appicon);
 
         try {
-            const res = await axios.post('http://localhost:8080/api/yourapp', formData, {
+            const res = await axios.post('https://zonex-50021869695.development.catalystappsail.in/api/yourapp', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },

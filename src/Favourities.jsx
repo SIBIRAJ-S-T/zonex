@@ -11,7 +11,7 @@ const Favourites = () => {
         const fetchAndUpdateFavorites = async () => {
             try {
                 // Fetch all products from the backend
-                const response = await fetch('http://localhost:8080/api/yourapp');
+                const response = await fetch('https://zonex-50021869695.development.catalystappsail.in/api/yourapp');
                 if (!response.ok) {
                     throw new Error('Failed to fetch products');
                 }
@@ -53,7 +53,7 @@ const Favourites = () => {
                     {favorites.map((fav, index) => (
                         <div key={index}>
                             <div className='boxfav' onClick={() => handleClick(fav)}>
-                                <img src={`http://localhost:8080/yourapp/${fav.id}/appicon`} alt={`App Icon ${index}`} className='homegamesimagefav'/>
+                                <img src={`https://zonex-50021869695.development.catalystappsail.in/yourapp/${fav.id}/appicon`} alt={`App Icon ${index}`} className='homegamesimagefav'/>
                             </div>
                             <div className='nameproratepro'>
                                 <p className='namepro'>{fav.appurl}</p>
