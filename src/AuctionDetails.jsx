@@ -59,7 +59,7 @@ const AuctionDetails = () => {
 
   const fetchAuctionDetails = async () => {
     try {
-      const response = await axios.get(`http://localhost:8080/api/auctions/${id}`);
+      const response = await axios.get(`https://zonex-50021869695.development.catalystappsail.in/api/auctions/${id}`);
       setAuction(response.data);
     } catch (error) {
       console.error('Error fetching auction details', error);
@@ -68,7 +68,7 @@ const AuctionDetails = () => {
 
   const fetchBids = async () => {
     try {
-      const response = await axios.get(`http://localhost:8080/api/auctions/${id}/bids`);
+      const response = await axios.get(`https://zonex-50021869695.development.catalystappsail.in/api/auctions/${id}/bids`);
       const fetchedBids = response.data.reverse(); // Reverse to show latest bids on top
       setBids(fetchedBids);
       setHighestBid(fetchedBids.length ? fetchedBids[0] : null);
@@ -105,7 +105,7 @@ const AuctionDetails = () => {
     }
 
     try {
-      await axios.post(`http://localhost:8080/api/auctions/${id}/bid`, {
+      await axios.post(`https://zonex-50021869695.development.catalystappsail.in/api/auctions/${id}/bid`, {
         amount: bidAmount,
         username: currentUser,
       });
@@ -121,7 +121,7 @@ const AuctionDetails = () => {
 
   const determineWinner = async () => {
     try {
-      const response = await axios.get(`http://localhost:8080/api/auctions/${id}/winner`);
+      const response = await axios.get(`https://zonex-50021869695.development.catalystappsail.in/api/auctions/${id}/winner`);
       const winnerUsername = response.data;
       setWinner(winnerUsername);
 
@@ -140,7 +140,7 @@ const AuctionDetails = () => {
 
   const fetchWinnerContact = async (username) => {
     try {
-      const response = await axios.get(`http://localhost:8080/api/phone-numbers/${username}`);
+      const response = await axios.get(`https://zonex-50021869695.development.catalystappsail.in/api/phone-numbers/${username}`);
       setWinnerContact(response.data);
     } catch (error) {
       console.error('Error fetching winner contact', error);
@@ -161,7 +161,7 @@ const AuctionDetails = () => {
           <div className="auction-details-left">
             <div className="auction-image">
               <img
-                src={`http://localhost:8080/api/auctions/${id}/image`}
+                src={`https://zonex-50021869695.development.catalystappsail.in/api/auctions/${id}/image`}
                 alt={auction.name}
                 className="auction-image"
               />

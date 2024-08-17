@@ -72,13 +72,13 @@ const Login = ({ setAuthStatus }) => {
     };
 
     const saveHistory = async () => {
-        const res = await axios.post('http://localhost:8080/loginhistory', { username, browserName, osName, deviceName });
+        const res = await axios.post('https://zonex-50021869695.development.catalystappsail.in/loginhistory', { username, browserName, osName, deviceName });
         console.log(res);
     }
 
     const saveCurrentUser = async () => {
         try {
-            const res = await axios.post('http://localhost:8080/currentuserinsert', {username});
+            const res = await axios.post('https://zonex-50021869695.development.catalystappsail.in/currentuserinsert', {username});
             console.log(res);
         } catch (error) {
             if (error.response && error.response.status === 409) {
@@ -98,7 +98,7 @@ const Login = ({ setAuthStatus }) => {
 
     const Handle_Login = async (event) => {
         event.preventDefault();
-        const res = await axios.get(`http://localhost:8080/get/${username}/${password}`);
+        const res = await axios.get(`https://zonex-50021869695.development.catalystappsail.in/get/${username}/${password}`);
         console.log(res.data)
         if (res.data === "ok") {
             localStorage.setItem('username', username);

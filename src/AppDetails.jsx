@@ -12,7 +12,7 @@ const AppDetails = () => {
     useEffect(() => {
         const fetchImage = async () => {
             try {
-                const response = await fetch(`http://localhost:8080/yourapp/${id}/appicon`);
+                const response = await fetch(`https://zonex-50021869695.development.catalystappsail.in/yourapp/${id}/appicon`);
                 const imageBlob = await response.blob();
                 const imageObjectURL = URL.createObjectURL(imageBlob);
                 setImageSrc(imageObjectURL);

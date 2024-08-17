@@ -13,7 +13,7 @@ const Auction = () => {
 
   const fetchProducts = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/api/auctions');
+      const response = await axios.get('https://zonex-50021869695.development.catalystappsail.in/api/auctions');
       const productsWithStatus = response.data.map(product => {
         const endTime = new Date(`${product.auctionDate}T${product.endTime}`);
         const now = new Date();
@@ -43,7 +43,7 @@ const Auction = () => {
         {products.map(product => (
           <div className="auction-product" key={product.id} onClick={() => handleImageClick(product.id)}>
             <img
-              src={`http://localhost:8080/api/auctions/${product.id}/image`}
+              src={`https://zonex-50021869695.development.catalystappsail.in/api/auctions/${product.id}/image`}
               alt={product.name}
               className="auction-product-image"
             />
